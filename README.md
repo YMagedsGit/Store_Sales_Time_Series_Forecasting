@@ -12,15 +12,6 @@ The pipeline emphasizes correct time series methodology: no random splits, no fu
 
 ---
 
-## Dataset
-
-**Source:** [Kaggle — Store Sales Time Series Forecasting](https://www.kaggle.com/competitions/store-sales-time-series-forecasting/data)  
-**Files used:** `train.csv`, `stores.csv`, `oil.csv`  
-**Size:** ~3 million rows across 54 stores × 33 product families × 1,684 days  
-**Target:** `sales` — daily unit sales per store-family combination
-
----
-
 ## Approach
 
 ### 1. Time-Based Train/Test Split
@@ -74,33 +65,6 @@ After the initial model, residuals were plotted over time. Two patterns were ide
 - **Holiday dips** — sudden drops on specific dates → `is_holiday` feature added
 
 This diagnostic loop — train → evaluate → inspect residuals → engineer → retrain — is the core of the workflow.
-
----
-
-## Project Structure
-
-```
-store-sales-forecasting/
-│
-├── Store_Sales_Time_Series_Forecasting.ipynb   # Main notebook
-├── train.csv                                    # Transaction data
-├── oil.csv                                      # Daily oil prices
-├── stores.csv                                   # Store metadata
-└── README.md
-```
-
----
-
-## Key Libraries
-
-```
-pandas, numpy, scikit-learn, xgboost, matplotlib, seaborn
-```
-
-Install dependencies:
-```bash
-pip install pandas numpy scikit-learn xgboost matplotlib seaborn
-```
 
 ---
 
